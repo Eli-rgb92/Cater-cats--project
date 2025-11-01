@@ -2,7 +2,7 @@
 
 A whimsical, cat-themed catering service website featuring fine dining with feline flair.
 
-![CaterCats Website Preview](Images/screenshot-1762012678787.png)
+![CaterCats Website Preview](./Images/CaterCats-Screenshot.jpeg)
 
 ## Description
 
