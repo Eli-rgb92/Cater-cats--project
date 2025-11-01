@@ -1,0 +1,287 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    overflow-x: hidden; /* Only hide horizontal overflow */
+    overflow-y: auto; /* Allow vertical scrolling */
+    color: white;
+    opacity: 0.95;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(./Images/fancy_restaurant_background_3.jpg) no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(2px);
+    z-index: -1;
+}
+
+
+header {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+    padding: 3rem 1.5rem;
+    --primary-header-color: #2D1B11;
+    background-color: var(--primary-header-color);
+}
+
+nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav {
+    font-size: 2rem;
+    font-weight: 500;
+    padding-right: 2rem;
+}
+
+/* Default (Unvisited) */
+nav a:link {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Visited */
+nav a:visited {
+    color: #ffffff; /* Slightly dimmed white */
+    text-decoration: wavy;
+}
+
+/* Hover */
+nav a:hover {
+    color: white; 
+    transform: scale(1.1);
+    text-decoration: underline;
+    text-decoration-color: #233120;
+}
+
+/* Active (When Clicked) */
+nav a:active {
+    color: #233120; 
+    transform: scale(0.95);
+}
+
+section {
+    padding: 5rem 2rem 3rem 2rem; /* Added extra top padding to avoid overlap with fixed header */
+}
+
+p {
+    text-align: center;
+    font-weight: 150;
+}
+
+
+
+h1, h2, h3, h4 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+h3 {
+    font-weight: 200;
+    font-size: 1.6rem;
+}
+
+h4 {
+    font-weight: 100;
+    font-size: 1.2rem;
+}
+
+.logo {
+    font-family: "Niconne", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 3.8rem;
+    padding: 1rem;
+    padding-left: 2rem;
+}
+
+#about {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-flow: column;
+    font-weight: 300;
+    padding-top: 12rem;
+    text-shadow: 3px 4px 8px black;
+    max-width: 100%;
+}
+
+#team {
+    opacity: 0.95;
+}
+
+.team-grid, .menu-grid, .review-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.team-member, .menu-item, .review {
+    background-color: #233120;
+    border: 1px solid white;
+    border-radius: 2%;
+    padding: 1rem;
+    text-align: center;
+    flex: 1 1 calc(30% - 1rem);
+    max-width: 350px;
+    margin-bottom: 3rem;
+}
+
+/* CEO gets its own centered card */
+.team-ceo {
+    display: flex;
+    justify-content: center;
+}
+
+.team-member {
+    height: auto;
+    width: 350px;
+}
+
+.team-ceo .team-member {
+    max-width: 400px;
+    background-color: #5a4433;
+}
+
+.team-member img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-bottom: 0.5rem;
+    margin: 1rem;
+}
+
+.menu-item img {
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    border: 3px solid white;
+    margin-bottom: 0.5rem;
+    margin: 1rem;
+}
+
+
+.review {
+    position: relative;
+    background: #423626;
+    border: 2px solid white;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.review::before {
+    content: '“';
+    font-size: 3rem;
+    color: white;
+    position: absolute;
+    top: -15px;
+    left: 10px;
+}
+
+.review::after {
+    content: '”';
+    font-size: 3rem;
+    color: white;
+    position: absolute;
+    bottom: -15px;
+    right: 10px;
+}
+
+#booking button {
+    background-color: #233120;
+    color: white;
+    border-radius: 3%;
+    text-decoration: underline;
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 1rem auto;
+}
+
+/* Hover */
+#booking button:hover {
+    background-color: #423626; /* Darker orange */
+    transform: scale(1.05);
+    text-decoration: none;
+}
+
+/* Active (Click) */
+#booking button:active {
+    background-color: #423626; /* Even darker */
+    transform: scale(0.95);
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #2D1B11;
+    margin-top: 2rem;
+}
+
+
+/*Resposive*/
+
+@media only screen and (min-width: 428px) and (max-width: 850px) {
+   .display-none {
+    display: none;
+   }
+
+   header {
+    justify-content: space-around;
+   }
+
+   .logo {
+    padding: 0.5rem;
+   }
+}
+
+@media only screen and (max-width: 427px) {
+    
+    header {
+        justify-content: center;
+    }
+
+    nav a {
+        display: none;
+    }
+}
